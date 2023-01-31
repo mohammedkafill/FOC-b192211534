@@ -1,0 +1,15 @@
+31.Shell program to find square of number
+#!/bin/bash 
+ 
+declare -a squares # array to hold values 
+ 
+for X in $(seq 1 50)  # generate 1,2,3 .. 50 
+do 
+  S=$(echo  "${X} * ${X}" | bc -l ) #  "2 * 2"  
+  squares+=(${S})                 # append to array 
+done 
+ 
+# all elements in array 
+for S in ${squares[@]} do 
+  echo "${S}" 
+done 
